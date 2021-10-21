@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function validate(){
+	var un= documents.forms["myform"]["name"].value;
+	var up= documents.forms["myform"]["password"].value;
+	
+	if(un=="")
+		{
+		alert("This field is required");
+		return false;
+		}
+	if(up=="")
+		{
+		alert("This field is required");
+		return false;
+		}
+	if(up.length<8)
+		{
+		alert("password need minimum of 8 characters");
+		return false;
+		}
+}
+
+</script>
+</head>
+<body>
+<form action="servlet2" method="post">
+<table>
+<tr>
+<td>Enter username:  </td>
+<td><input type="text" name="name" required></td>
+</tr>
+<tr>
+<td>Enter password:  </td>
+<td><input type="password" name="password" required></td>
+</tr>
+<tr>
+<td>Gender </td>
+<td><input type="radio" name="gender" value="male">male</td>
+<td><input type="radio" name="gender" value="female">female</td>
+</tr>
+<tr>
+<td>languages </td>
+<td><input type="checkbox" id="language1" name="language1" value="english">English</td>
+<td><input type="checkbox" id="language2" name="language2" value="malayalam">Malayalam</td>
+<td><input type="checkbox" id="language3" name="language3" value="Tamil">Tamil</td>
+</tr>
+<tr>
+<td>
+<label for="country" >Country:</label>
+<select name="country" id="country">
+  <option value="india">INDIA</option>
+  <option value="china">CHINA</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+  <option value="uae">UAE</option>
+</select>
+<td>
+</tr>
+<tr>
+<td><input type="submit" value="REGISTER"></td>
+<td><input type="reset" value="RESET"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
